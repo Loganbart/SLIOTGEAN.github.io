@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+   <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width">
+  <title>Page perso</title>
+  
+</head>
+<body>
+  <h1>Bienvenue sur la page personnel de Logan BART</h1>
+   <p>Je suis éleve au lycée international de Ferney Voltaire <br /> en classe de Premiere générale 4.
+    Par la suite je souhaitte garder maths et NSI afin de me <br />permettre de me diriger vers des écoles supperieur amenant vers un<br /> metier touchant à l'informatique.</p>
+  <h2>Présentation des projets</h2> 
+   <i>1/Projets cartographie,<a href="Pagecarte.html" style="color:blue">Carte</a> </i>
+  <h2>Présentation personnelle</h2>
+    <p>Je pratique plusieurs sports en dehors du lycée dont <br />principalement le ski et le VTT:</p>
+    <p>un petit aperçu:</p>
+    <img src="ski.jpg" height="30%" width="30%" >
+    <img src="vtt.jpg" height="30%" width="30%" >
+    
+    <p>Pour les personnes interessées par mon matériel:</p>
+    <img src="ski_enfant.jpg" height="30%" width="30%" >
+    <img src="velo_rose.jpg" height="30%" width="30%">
+    <p>J'ai également une passion pour l'aéromodelisme,<br /> surtout en fpv, je pilote des drones de course.</p>
+    <img src="drone.jpg" height="30%" width="30%">
+    <img src="drone1.jpg" height="30%" width="30%">
+    <img src="mondrone2.jpg" height="30%" width="30%">
+    <p>Ma propre manière de dire bonjour aux adversaires:</p>
+    <embed src="video.mp4" autostart="false" height="500" width="759" />
+    
+   
+    <p>Lien <a href="projet.html" style="color:blue">projet</a></p>
+    <p>Lien <a href="rapport.html" style="color:blue">rapport</a></p>
+   
+  
+  
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+p {
+    /* basic font setting */
+    font: bold 3em Impact, sans-serif;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 140%;
+    color: black;
+    text-shadow: 0    0   2px #A9F5A9,
+               1px -1px 3px #2EFE9A,
+              -2px -2px 4px #00FF40,
+               2px -4px 5px #01DF3A,
+              -2px -6px 6px #04B431,
+               0   -8px 7px #088A29,
+               1px -9px 8px #0B6138;
+}
+
+h2{
+    /* basic font setting */
+    font: bold 3em Impact, sans-serif;
+    text-align: center;
+    letter-spacing: 2px;
+    background: #9CFE01;
+    text-decoration:underline;
+    text-shadow: 2px 2px 0 white,
+               4px 4px 0 black;
+}
+
+h1{
+    /* basic font setting */
+    font: bold 3em Impact, sans-serif;
+    text-align: center;
+    letter-spacing: 2px;
+    background: #9CFE01;
+    text-decoration:underline;
+    text-shadow: 2px 2px 0 white,
+               4px 4px 0 black;
+}
+
+h3{
+    color:orange;
+    font-weight: 700;
+    text-align: left;
+    
+    
+}
+
+i{
+    color:black;
+    font-weight: 900;
+    text-align: left;
+    color: black;
+    text-shadow: 0    0   2px #A9F5A9,
+               1px -1px 3px #2EFE9A,
+              -2px -2px 4px #00FF40,
+               2px -4px 5px #01DF3A,
+              -2px -6px 6px #04B431,
+               0   -8px 7px #088A29,
+               1px -9px 8px #0B6138;
+}
+
+
+img{
+    display: block;
+    margin: 0 auto;
+}
+
+body {
+  color:black;
+  background-color:white;
+  background-image:url(fond.jpg);
+}
+
+h4{
+    color:red;
+    font-weight: 600;
+    text-align: right;
+    text-shadow: 0    0   2px #A9F5A9,
+               1px -1px 3px #2EFE9A,
+              -2px -2px 4px #00FF40,
+               2px -4px 5px #01DF3A,
+              -2px -6px 6px #04B431,
+               0   -8px 7px #088A29,
+               1px -9px 8px #0B6138;
+}
+
+embed{
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+blink {
+  -webkit-animation: 2s linear infinite condemed_blink_effect; // pour Safari 4.0-8.0
+  animation: 2s linear infinite condemed_blink_effect;
+}
+@-webkit-keyframes condemed_blink_effect { // pour Safari 4.0-8.0
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@keyframes condemed_blink_effect {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}

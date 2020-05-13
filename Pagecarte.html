@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width">
+  <title>projet</title>
+</head>
+<body>
+  <h1>Projet cartographie et donnés</h1>
+  <img src="europe.gif" height="30%" width="30%" align=left> 
+  <img src="europe.gif" height="30%" width="30%" align=right >
+  <img src="europe.gif" height="30%" width="30%" >
+    <h2>Présentation</h2>
+    <p>Le projet réalisé durant ces vacances a pour but de montrer l'évolution du COVID-19 en Europe </p>
+    <p>Afin de mettre en place une carte intéractive montrant la propagation de ce virus, j'ai utilisé des bases de Donnés trouvées sur <a href="https://www.data.gouv.fr/fr/" style="color:blue">data.gouv.fr</a>
+    <p><a href="coronapays2.csv">Table de donné VIRUS</a><-/-><a href="test.csv">Table de donné GPS</a></p>
+    <p><a href="tablejointuretest776.csv">Fusion des 2 tableaux</a></p>
+    <p>La première table renferme des donnés sur le covid-19 (infectés, morts,guérisons...) sur 3 mois de presque tous les pays du monde </p>
+    <p>La seconde table renferme des donnés GPS de tous les pays d'Europe </p>
+    <p>J'ai voulus réaliser une carte claire avec des marker sur chaque pays représentant le drapeau de ceux ci renfermant un graphique montrant l'évolution du nombre de personne infectés par ce virus. Le choix du nombre d'infectés a été choisi car c'est la donnés la plus représentative de la progrétion du virus dans l'europe</p>
+    <p>J'ai rencontré quelques problèmes, lors de la jointure de mes tableau, j'ai mis du temps a comprendre que les séparateur n'était pas les bon alors je les ai imposé au 2 tables.</p>
+    <h3>table1=importCSV('test.csv', separateur = ',' )</h3>
+    <h3>table2=importCSV('coronapays2.csv', separateur = ',' )</h3>
+    <h2>↓↓Cliquez sur la Terre↓↓</h2>
+    <p><a href="cart.html" style="color:blue"> <img src="planete.png" height="20%" width="20%" ></a></p>
+    <p>Afin de réaliser cette carte, il m'a fallu créer un code, composé de 4 grandes parties:</p>
+    <h2>Création de la carte</h2>
+    <p>Afin de créer une carte j'ai tous simplement importer la bibliotheque folium et j'ai créé une carte, j'ai choisit de prendre des coordonnés GPS au centre de l'Europe et j'ai adapté le zoom afin d'avoir une vision glmobale sur l'Europe</p>
+    <p>Et j'ai enrengistré cette carte sur un fichier HTML</p>
+    <h3>import folium</h3>
+    <h3>m = folium.Map(location=[48.856614, 2.3522219], zoom_start=6)</h3>
+    <h3>m.save('cart.html')</h3>
+    <h2>Création des markers</h2>
+    <p>Afin de rendre ma carte interactive, j'ai choisis de placer des markers pour chaque pays, afin que l'orsque l'on clique dessus, apparaisse un graphique m'ontrant l'évolution du virus </p>
+    <h3>folium.Marker([46.954994, 2.396425],</h3>
+    <h3>--------- popup=folium.Popup().add_child(folium.VegaLite(chartFrance,width=600,height=200)),</h3>
+    <h3>--------- tooltip=tooltip,</h3>
+    <h3>--------- icon=logoFrance).add_to(m),</h3>
+    <h2>Création du tooltip</h2>
+    <p>Utilisation de "tooltip"afin de rendre le carte plus interractive (lorsque que la souris passe sur le marker, la variable enrengistrer dedans apparait</p>
+    <h3>tooltip='Cliquez ici pour plus info'</h3>
+    <h2>Création des logos</h2>
+    <p>J'ai décidé de mettre le drapeau du pays où est le marker enrengistrer dans des variables logo(+NomDuPays) qui est enregstrer dans la variable "icon". La tailles des logos présent sur la carte sont en fonction du nombre d'infectés dans le pays </p>
+    <h3>logoFrance= folium.features.CustomIcon('france.png',icon_size=(70,70))</h3>
+    <h2>Création des graphiques</h2>
+    <p>Pour que la carte nous apprenne autre chose que les drapeaux des pays d'Europe, j'ai mis des graphique représentant la propagation du COVID-19 dans chaque pays d'Europe, avec en abscisse les dates et en ordonné le nombre d'infectés</p>
+    <h3>chartFrance ={</h3>
+    <h3>-"$schema": "https://vega.github.io/schema/vega-lite/v4.json",</h3>
+    <h3>-"description": "A simple bar chart with embedded data.",</h3>
+    <h3>-"width":450,</h3>
+    <h3>-"height":250,</h3>
+    <h3>-"data": {</h3>
+    <h3>-"values": [</h3>
+    <h3>-{"2020": "2020-01-28", "infecté": 4},</h3>
+    <h3>-{"2020": "2020-02-08", "infecté": 11},</h3>
+    <h3>-{"2020": "2020-02-18", "infecté": 12},</h3>
+    <h3>-{"2020": "2020-02-28", "infecté": 57},</h3>
+    <h3>-{"2020": "2020-03-08", "infecté": 1126},</h3>
+    <h3>-{"2020": "2020-03-18", "infecté": 9134},</h3>
+    <h3>-{"2020": "2020-03-28", "infecté": 37575},</h3>
+    <h3>-{"2020": "2020-04-08", "infecté": 103302},</h3>
+    <h3>-{"2020": "2020-04-18", "infecté": 151393},</h3>
+    <h3>-{"2020": "2020-04-28", "infecté": 165842},</h3>
+    <h3>-]</h3>
+    <h3>-},</h3>
+    <h3>-"mark": "line",</h3>
+    <h3>-"encoding": {</h3>
+    <h3>-"x": {"field": "2020", "type": "temporal", "axis": {"labelAngle": 200}},</h3>
+    <h3>-"y": {"field": "infecté", "type": "quantitative"},</h3>
+    <h3>-"color":{</h3>
+    <h3>-"value":"red"}</h3>
+    <h3>-}</h3>
+    <h3>}</h3>
+    <h4>↓↓Fichiers Utilisés↓↓</h4>
+    <a href="FichiersUtilisés.zip" style="color:blue"> <img src="F.png" height="6%" width="6%" align=right ></a>
+    <p> Grâce à ce projet il est donc claire que le covid-19 infecte de plus en plus de personnes, il est donc tres important de ce proteger</p>
+    <img src="protection.jpg" height="25%" width="25%"  >
+    
+ 
+  
+   
+   <p>Lien <a href="index.html" style="color:blue">index</a></p>
+  
+   
+   
+    
+    <img src="europe.gif" height="30%" width="30%" align=left> 
+    <img src="europe.gif" height="30%" width="30%" align=right >
+    <img src="europe.gif" height="30%" width="30%" >
+
+
+</body>
+</html>
