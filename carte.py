@@ -3,7 +3,7 @@ import os
 import json
 
 #créer une carte
-m = folium.Map(location=[48.856614, 12.432786], zoom_start=6)#pour créer la map
+m = folium.Map(location=[48.856614, 12.432786], zoom_start=8)#pour créer la map
 
 tooltip='Cliquez ici pour plus info'
 
